@@ -5,6 +5,7 @@ library(plyr)
 library(ggplot2)
 library(lme4)
 library(sjstats)
+library(lattice)
 #################################
 # Chamaecrista nodules collected from Greycloud dunes:
 load("chamecristaCombinedNodData_edited.RDAtA")
@@ -203,7 +204,7 @@ zz[1,] <- with( cfas[cfas$plantID %in% multiplants,] , tapply(shootDWg, plantID,
 zz[2,] <- with( cfas[cfas$plantID %in% multiplants,] , tapply(phbEst, plantID, function(x){min(x,na.rm=T)}))
 zz[3,] <- with( cfas[cfas$plantID %in% multiplants,] , tapply(phbEst, plantID, function(x){max(x,na.rm=T)}))
 rect(xleft=zz[1,]-0.008,ybottom=zz[2,]-0.02,xright = zz[1,]+0.008,ytop = zz[3,]+0.02,lwd=2)
-points(phbEst ~ shootDWg, data=cfas[cfas$growthStage=="veg",],pch=21, lwd=2,cex=1.5)
+points(phbEst ~ shootDWg, data=cfas[cfas$growthnamesStage=="veg",],pch=21, lwd=2,cex=1.5)
 points(phbEst ~ shootDWg, data=cfas[cfas$growthStage=="bud",],pch=21, bg="grey",lwd=2,cex=1.5)
 points(phbEst ~ shootDWg, data=cfas[cfas$growthStage=="flw",],pch=25,lwd=2,cex=1.5)
 points(phbEst ~ shootDWg, data=cfas[cfas$growthStage=="earlypod",],pch=25, bg="grey",lwd=2,cex=1.5)
