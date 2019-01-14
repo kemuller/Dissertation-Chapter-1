@@ -236,7 +236,7 @@ PHB measurements from splitroot plants (Fig. 1 in paper). All flow cytometry mea
 
 
 ##### standards
-Flow cytometry measurements for E. meliloti standards measured alongside samples in phbdata. Columns are the same except where indicated. 
+Flow cytometry measurements for E. meliloti standards measured alongside samples in phbdata. Columns are the same as phbdata except where indicated. 
 	sampleID
 	file
 	FL1geomean
@@ -266,7 +266,7 @@ Flow cytometry measurements for E. meliloti standards measured alongside samples
 
 
 #### noduleMassWithH2assays.RDATA
-These are additional measurements from the splitroot plants. Some of the measurements are from a gas exchange assay that isn't discussed in this paper. At the time it seemed easier to keep them in than to try and pick out only the columns I needed to use. 
+These are additional measurements from the splitroot plants (Fig 1C). Some of the measurements are from a gas exchange assay that isn't discussed in this paper. At the time it seemed easier to keep them in than to try and pick out only the columns I needed to use.  
 ##### h2withnods
 Ignore this dataframe (it's a slightly rougher version of h2withnods2)
 
