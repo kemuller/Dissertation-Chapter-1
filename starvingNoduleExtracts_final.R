@@ -525,7 +525,6 @@ plot(meanpropHighcells ~ starvationdays, data=flowdatabystrain[flowdatabystrain$
 for(i in 1:9){
 points(meanpropHighcells ~ starvationdays, data=flowdatabystrain[flowdatabystrain$strain==strainz[i] &                                                                    flowdatabystrain$treatment=="LD",],type="b",col=rainbow(9)[i])
 }
-points(meanpropHighcells ~ starvationdays, data=flowdatabystrain[flowdatabystrain$strain=="B2"])
 
 plot(relativepop ~ starvationdays, data=flowdatabystrain[flowdatabystrain$strain=="A3",],type="b",ylim=c(0,25))
 for(i in 1:9){
@@ -582,7 +581,9 @@ plotPHB("8")
 
 # Just out of curiosity, I want to see how my PHB measurements from the same strains in a different set of plants (SS3)
 # compared to PHB used in plants going into the starvation experiment
-ss3means <- tapply(was14_starvingstrains$phbEst_zerobound,was14_starvingstrains$strain,mean)
+load("SS3regatedEditedPHBdata.RData")
+was14_starvingstrains <- ss3phbdata[ss3phbdata$strain %in% strainz,]
+ss3means <- tapply(was14_starvingstrains$phbEst,was14_starvingstrains$strain,mean)
 for(i in 1:length(ss3means)){
   flowdatabystrain[flowdatabystrain$strain==names(ss3means)[i],"meanPHBfromSS3"] <- ss3means[i]
 }
